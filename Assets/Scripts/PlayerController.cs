@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isAble;
     public GameObject prefab;
+    public Vector3 newScale;
 
     void start()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
             GameObject clon;
             clon = Instantiate(prefab);
             clon.transform.position = transform.position - new Vector3(0, 0, -1);
-            Destroy(clon, 10);
+            clon.transform.localScale = newScale *= 1.1f;
         }
     }
 
